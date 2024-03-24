@@ -1,0 +1,120 @@
+[
+{
+	"uri": "/1-introduce/1.1-s3/",
+	"title": "Amazon S3",
+	"tags": [],
+	"description": "",
+	"content": "Amazon Simple Storage Service (Amazon S3) is an object storage service that offers industry-leading scalability, data availability, security, and performance. Customers of all sizes and industries can use Amazon S3 to store and protect any amount of data for a range of use cases, such as data lakes, websites, mobile applications, backup and restore, archive, enterprise applications, IoT devices, and big data analytics. Amazon S3 provides management features so that you can optimize, organize, and configure access to your data to meet your specific business, organizational, and compliance requirements.\n"
+},
+{
+	"uri": "/1-introduce/1.2-sagemaker/",
+	"title": "Amazon SageMaker",
+	"tags": [],
+	"description": "",
+	"content": "Amazon SageMaker is a fully managed machine learning (ML) service. With SageMaker, data scientists and developers can quickly and confidently build, train, and deploy ML models into a production-ready hosted environment. It provides a UI experience for running ML workflows that makes SageMaker ML tools available across multiple integrated development environments (IDEs).\nWith SageMaker, you can store and share your data without having to build and manage your own servers. This gives you or your organizations more time to collaboratively build and develop your ML workflow, and do it sooner. SageMaker provides managed ML algorithms to run efficiently against extremely large data in a distributed environment. With built-in support for bring-your-own-algorithms and frameworks, SageMaker offers flexible distributed training options that adjust to your specific workflows. Within a few steps, you can deploy a model into a secure and scalable environment from the SageMaker console.\n"
+},
+{
+	"uri": "/3-accessibilitytoinstances/3.1-sagemaker/",
+	"title": "Create Sagameker Studio Classic",
+	"tags": [],
+	"description": "",
+	"content": " Go to the URL address of Management Console of AWS, then log in: (https://aws.amazon.com/console/). Next, you will see log in interface of AWS in the below. I suggest using root user for the IAM permission. If you don\u0026rsquo;t have any account yet, please click on button Create a new AWS account. After login successfully, you will see the Management Console of AWS in the below. In this step, we will search Sagemaker on the search bar. Then choose Sagameker service. You will see the interface of Sagemaker in the below. Then click on Admin Configurations -\u0026gt; Domains, next click on button Create domain. In the step Set up Sagemaker Domain, I suggest choose Set up for single user(Quick setup), then click on Set up. (Domain will include Amazon Elastic File System EFS volume, a list of authorized users; and a variety of security, application, policy, and Amazon Virtual Private Cloud (VPC) configurations) Please wait for 8-10 mins to prepare the domain. Then you will see, in the below image, check status InService. Congratulations!! Now let\u0026rsquo;s go to the domain, then you will see Domain has created the default user automatically, check it on User profiles tab. It\u0026rsquo;s great!. Click on Launch, and then choose Studio to move to Sagemaker Studio Classic. Welcome to Sagemaker Studio Classic, now look at Appilcations in the upper-left corner, choose symbol Studio Classic. Then you will see the default user we\u0026rsquo;ve created, click on Run. Wait for 8-10 mins to set up. You will see this interface in the below, check the status is Running, then Open it. "
+},
+{
+	"uri": "/3-accessibilitytoinstances/3.2-s3-bucket/",
+	"title": "Data preparation",
+	"tags": [],
+	"description": "",
+	"content": "In this step, we will need to use a S3 buckets to store a data.\nThe search bar on upper-left corner, search for S3. Then choose the service. Congratulations! You have already a bucket because Sagemaker Domain has provided to you. Click on a new bucket you\u0026rsquo;ve just created, clicked on Upload File (https://www.kaggle.com/datasets/ravishah1/carvana-predict-car-prices, download it please) In the Object tab, go to Upload. Then choose the file we\u0026rsquo;ve just downloaded from local. Click on Upload. Congratulations!!! You have uploaded successfully. "
+},
+{
+	"uri": "/4-s3log/4.1-updateiamrole/",
+	"title": "Delete Jupyter Server",
+	"tags": [],
+	"description": "",
+	"content": " First of all, back to AWs management console, go to Sagemaker -\u0026gt; Admin Configurations -\u0026gt; Domains -\u0026gt; User profiles tab -\u0026gt; click on User. Check on the Apps, status of App name: default is Ready. Now go to Sagemaker Studio Classic tab, click on symbols Studio Classic on the upper-left corner, see the default user, select Stop button. Wait for a second to stop. Now back to Management Console, go to Sagemaker -\u0026gt; Admin Configurations -\u0026gt; Domains -\u0026gt; User profiles tab -\u0026gt; click on User. Check on the Apps, status of App name: default is Deleted. "
+},
+{
+	"uri": "/1-introduce/",
+	"title": "Introduction",
+	"tags": [],
+	"description": "",
+	"content": "Content Amazon S3 Amazon SageMaker Autopilot "
+},
+{
+	"uri": "/",
+	"title": "Training and Deploying the prediction model",
+	"tags": [],
+	"description": "",
+	"content": "Introduction Overall In this lab, you\u0026rsquo;ll learn the basics and practice of Amazon Sagemaker Autopilot for training a predictive model.\nContent Introduction Train and Deploy model Clean-up resources "
+},
+{
+	"uri": "/4-s3log/4.2-creates3bucket/",
+	"title": "Delete default user",
+	"tags": [],
+	"description": "",
+	"content": "To delete a Default user in Domain, you should empty all the applications in this Default user. Please following step by step for completed deletion.\nNow, go to Sagemaker -\u0026gt; Admin Configurations -\u0026gt; Domains -\u0026gt; User profiles tab -\u0026gt; click on User. Check on the Apps, status of App name: sagemaker-data-scienc-ml-t3-medium-xxxx is Ready. Drag the horizontal bar to the right. You click on Delete app. Now verify to delete it. Wait for 5 mins to completed deletion. Now you check the status. Then you drag the vertical bar to the bottom. You see button Edit, click on it. In the Edit user profile, in General settings, in section Delete user, select Delete user. If you delete default user successfully, it will show that. "
+},
+{
+	"uri": "/3-accessibilitytoinstances/3.3-autopilot/",
+	"title": "Model training with Autopilot",
+	"tags": [],
+	"description": "",
+	"content": " Sagemaker has Autopilot service that handles end-to-end machine learning workload. Please check the workflow of machine learning projects. After open, it will turn into a new tab, that is the Sagemaker Studio Classic by using Jupyter notebook (don\u0026rsquo;t worry about the IDE or coding, because we just write a little bit of Python code). Now, let\u0026rsquo;s look up for the House symbol in the upper-left corner, click on it. Then click on AutoML, you will see this is the AutoPilot service. Let\u0026rsquo;s create it. In the section Create AutoPilot experiment, fill in name and input data from S3. Back to S3 tab, go to the bucket that we\u0026rsquo;ve created before, go to the .csv file, then click on Copy S3 URI. Back to the Studio Classic tab, paste the link in the S3 URI path, then Go. You will see the .csv file here, click on it and Select. Then we go to Next: Target and features Target column chooses which features is the target value. In this task, we want to predict the car\u0026rsquo;s price, so choose price column is the target value. In Features label, suggest checking all the remaining features and setting Datatype is Auto. Then click on Training method and algorithms On Training method and algorithms tab, select Auto, then click on Next: Deployment and advanced settings. Enter a name for endpoint which deploys for the best model. Then Next: Review and create. Now, let\u0026rsquo;s create experiment. Congratulations if it show here. Wait for 10-15 mins. Now you can find the best model in their ensembles. The accuracy of the model is graded from top to bottom of the table below. Now click on View Model Detail. Tab Explainability, the horizontal bar chart shows us the feature importance, we can see the importance features is ranked from Name, Year and Mile. In the other word, Name is the most importance feature that impacts on car\u0026rsquo;s price. In Performance tab, click Metrics table and you can see all the metrics model has measured througout the training process. Look at Actual vs predicted, it is a straight line fit almost scatter plot, so it\u0026rsquo;s surely a Linear Regression. "
+},
+{
+	"uri": "/3-accessibilitytoinstances/3.4-deploy/",
+	"title": "Model with real-time inference deployment",
+	"tags": [],
+	"description": "",
+	"content": " Now get in View Model detail of the Best Model. Select Deploy model to deploy. In this tab, do the following: select Make real-time predictions, the label Instance type, select ml.t2.medium. Then, click on Deploy to endpoint. Wait for 5 mins to complete. Then go to House symbols on the upper-left corner -\u0026gt; Deployments -\u0026gt; Endpoints, then you can see the model deployed at Endpoint. Check the status In Service means model is deployed successfully. Now do the following instructions to create a Jupyter notebook. Now check for environment, set up by the following instructions, then Create. Now let\u0026rsquo;s go to take one example, please open .csv file. Check-in the actual value of Toyota Yaris, year 2020, 33075 miles is 20990. Copy the following code, then input the data you\u0026rsquo;ve focused on it. We should compare the predicted value to actual value (you must code and run each cell from top to bottom, click symbols to run or Shift + Enter). Congratulations !!! You can see the bias between predicted value and actual value is insignificant.\nNow try to predict an another new example (ex: use Toyota Yaris, 2024, 3589), predict for new car of Toyota Yaris version 2024. Congratulations! You\u0026rsquo;ve done all end-to-end maching learning workflow by using Sagemaker Autopilot. Now you can try another prediction or classification model. Try by yourself.\n"
+},
+{
+	"uri": "/3-accessibilitytoinstances/",
+	"title": "Train and Deploy Model",
+	"tags": [],
+	"description": "",
+	"content": "In this step, we will practice with AWS Sagemaker, how to use Sagemaker Studio Classic and Autopilot for training and deploying model.\nContent Create Sagemaker domain and Studio Classic Prepare data with S3 buckets Create Autopilot Deploy model with Endpoint "
+},
+{
+	"uri": "/4-s3log/4.3-creategwes3/",
+	"title": "Delete Domain",
+	"tags": [],
+	"description": "",
+	"content": "To delete a Sagemaker Domain, you should empty all the users in this Domain. Please following step by step for completed deletion.\nBack to Domains, choose it and click on Edit. In General settings, click on Delete domain. Check the Domains if you\u0026rsquo;ve delete successfully. "
+},
+{
+	"uri": "/4-s3log/",
+	"title": "Clean up resources",
+	"tags": [],
+	"description": "",
+	"content": "Cleaning up resources after using AWS services is the essential steps to avoid incurring cost. Following step by step instructions to delete.\nContent: Delete a Jupyter Server Delete a default user Delete the Sagemaker Domain Delete S3 Buckets Delete Models and Endpoints "
+},
+{
+	"uri": "/4-s3log/4.4-configsessionlogs/",
+	"title": "Delete Buckets in S3 ",
+	"tags": [],
+	"description": "",
+	"content": " Go to S3 -\u0026gt; Buckets, choose your Studio Buckets you\u0026rsquo;ve created before (sagemaker-studio-xxxxx). In Delete bucket, you must Empty bucket first, then confirm to delete. Check if successful empty. Now choose this Bucket again, then Delete. Check in delete successfully! Now keep to delete the remaining bucket (sagemaker-us-east-1-xxxx), (my region is us-east-1, up to your region). Check in delete successfully! "
+},
+{
+	"uri": "/4-s3log/4.5-delete/",
+	"title": "Delete deployed model at Endpoint",
+	"tags": [],
+	"description": "",
+	"content": " Now go to Sagemaker service, Go to Inference, then go Models, select your model, then click on Actions -\u0026gt; Delete. Now check it on delete successfully! Go to Inference -\u0026gt; Endpoint configurations, select your endpoint configuration, then click on Actions -\u0026gt; Delete. Continue to delete the second one. Now all Endpoint configurations are completed delete. Finally, Inference -\u0026gt; Endpoints, select your endpoint, then click on Actions -\u0026gt; Delete. Now confirm to delete. Completed deletion. Congratulations!! You\u0026rsquo;ve cleaned up all resources. Thanks for joining my workshop!\n"
+},
+{
+	"uri": "/categories/",
+	"title": "Categories",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/tags/",
+	"title": "Tags",
+	"tags": [],
+	"description": "",
+	"content": ""
+}]
